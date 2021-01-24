@@ -25,11 +25,15 @@ const multer = require("multer");
 const parser = require("body-parser");
 const LocalStrategy = require("passport-local");
 const mongoosePaginate = require("mongoose-paginate");
+const MongoDBStore = require("connect-mongo")(session);
+
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/BUSCKR";
 
 mongoose.connect("mongodb://localhost:27017/streetMusic", {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true,
+	useFindAndModify: false,
 });
 
 const db = mongoose.connection;
@@ -49,11 +53,26 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(parser.urlencoded({ extended: false }));
 
+const secret = process.env.SECRET || "thisworks";
+
+const store = new MongoDBStore({
+	url: dbUrl,
+	secret,
+	touchAfter: 24 * 60 * 60,
+});
+store.on("error", function (e) {
+	console.log("session store error");
+});
+
 const sessionConfig = {
-	secret: "thisworks",
+	secret,
+	store,
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
+		store,
+		name: "session",
+		httpOnly: true.valueOf,
 		expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
 		maxAge: 1000 * 60 * 60 * 24 * 7,
 		httpOnly: true,
