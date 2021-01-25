@@ -3,7 +3,6 @@ const router = express.Router();
 const { storage } = require("../cloudinary");
 const catchAsync = require("../utilities/catchAsync");
 const { eventSchema } = require("../schemas.js");
-const ExpressError = require("../utilities/expressError");
 const Event = require("../models/event");
 const { isLoggedIn, isAuthor, validateEvent } = require("../middleware");
 const multer = require("multer");

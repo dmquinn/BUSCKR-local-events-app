@@ -7,7 +7,7 @@ const {
 } = require("../middleware");
 const Event = require("../models/event");
 const Comment = require("../models/comments");
-const ExpressError = require("../utilities/ExpressError");
+const ExpressError = require("../utilities/express-error");
 const catchAsync = require("../utilities/catchAsync");
 
 router.post(

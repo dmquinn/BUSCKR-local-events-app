@@ -1,5 +1,5 @@
 const { eventSchema, commentSchema } = require("./schemas.js");
-const ExpressError = require("./utilities/ExpressError");
+const ExpressError = require("./utilities/express-error");
 const Event = require("./models/event");
 const Comment = require("./models/comments");
 
