@@ -1,8 +1,2 @@
-node_modules
-secrets.json 
+node_modules 
 .env
-/.pnp
-.pnp.js
-/build
-.env.production
-.env.local
