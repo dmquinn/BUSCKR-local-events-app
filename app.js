@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const catchAsync = require("./utilities/catchAsync");
-const expressError = require("./utilities/expressError");
+const expressError = require("./utilities/express-error");
 const Event = require("./models/event");
 const eventRoutes = require("./routes/events");
 const session = require("express-session");
@@ -125,7 +125,7 @@ app.get("/", (req, res) => {
 
 /////
 app.all("*", (req, res, next) => {
-	next(new ExpressError("page not found", 404));
+	next(new expressError("page not found", 404));
 });
 
 app.use((err, req, res, next) => {
