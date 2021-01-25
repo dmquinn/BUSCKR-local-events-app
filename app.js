@@ -12,7 +12,6 @@ const catchAsync = require("./utilities/catchAsync");
 const Event = require("./models/event");
 const eventRoutes = require("./routes/events");
 const session = require("express-session");
-const expressError = require("./utilities/expressError");
 const ExpressError = require("./utilities/expressError");
 const User = require("./models/user");
 const Comment = require("./models/comments");
@@ -115,9 +114,7 @@ app.post(
 	catchAsync(async (req, res, next) => {
 		const d = req.body.date;
 		const data = await Event.find({ date: d });
-		// if (!req.body.campground) throw new ExpressError('Invalid Campground Data', 400);
-		// const campground = new Campground(req.body.campground);
-		// await campground.save();
+
 		res.render(`./events/eventByDate`, { data });
 		res.redirect(`/eventByDate/${d}`);
 	})
