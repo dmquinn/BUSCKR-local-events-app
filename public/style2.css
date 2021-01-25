@@ -18,13 +18,15 @@ main {
 .hamburger {
 	background-image: url("hamburger.svg") !important;
 	outline: none !important;
-	border-radius: 50%;
+	border: none !important;
 	/* transform: rotate(deg); */
-	transition: 0.3s;
+	/* transition: 0.3s; */
 }
 .hamburger:active {
 	transform: rotate(90deg);
 	transition: 0.3s;
+	outline: none !important;
+	border: none !important;
 }
 .rightLinks {
 	position: relative;
@@ -45,6 +47,8 @@ main {
 	color: white;
 	font-weight: 600;
 	transition: 0.2s;
+	text-decoration: underline !important;
+	text-decoration-color: #202020 !important;
 }
 .nav-link:hover {
 	color: rgb(252, 127, 127) !important;

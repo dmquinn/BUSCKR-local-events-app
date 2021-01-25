@@ -1,14 +1,34 @@
 <% layout("layouts/boilerplate") %>
+<% const date = new Date().toDateString() %> 
+			<% const d = new Date().getDate(); %> 
+			<% const m = new Date().getMonth() + 1; %> 
+			<% const om = new Date().getMonth() + 2; %>
+			<% const y = new Date().getFullYear(); %> 
+			<% const todaysDate = d + '/' + m + '/' + y; %> 
+			<% const oneMonth = d + '/' + om + '/' + y; %> 
+			
+
 <section class="vw-100 introSection">
 	<div class="jumbotron jumbotron-fluid homeJumbotron">
 		<div class="container">
+			<h6 class="eventDate"><%= todaysDate  %> </h6>
 			<h1 class="display-4 upcomingEventsHeader">Upcoming Events</h1>
 		</div>
 	</div>
 </section>
 <div class="row mt-5">
+	
 	<section class="col mt-5">
-		<% for (let event of events) {%>
+
+		<% for (let event of events) { %>
+			<% const d = new Date(event.date).getDate(); %> 
+			<% const m = new Date(event.date).getMonth() + 1; %> 
+			<% const y = new Date(event.date).getFullYear(); %> 
+			<% const eventDate = d + '/' + m + '/' + y; %> 
+			
+
+			<% if(eventDate > todaysDate) { %> 
+	 
 		<div class="card offset-lg-1" style="width: 20rem">
 			<img
 				class="card-img-top"
@@ -21,7 +41,7 @@
 					<%= event.title %>
 				</h1>
 				<script></script>
-				<h5 class="card-text eventDate"><%= event.date;%></h5>
+				<h5 class="card-text eventDate"><%= eventDate %></h5>
 				<p class="card-text text-muted Type">
 					Event Type: <%= event.type %>
 				</p>
@@ -45,7 +65,54 @@
 				</a>
 			</div>
 		</div>
+	<%}%>
+		<%}%>
+		<h1 class="int">Past Events</h1>
+		<% for (let event of events) { %>
+			<% const d = new Date(event.date).getDate(); %> 
+			<% const m = new Date(event.date).getMonth() + 1; %> 
+			<% const y = new Date(event.date).getFullYear(); %> 
+			<% const eventDate = d + '/' + m + '/' + y; %> 
 
+			<% if(eventDate < todaysDate) { %> 
+	 
+		<div class="card offset-lg-1" style="width: 20rem">
+			<img
+				class="card-img-top"
+				src="<%= event.images.url %>"
+				style="height: 18rem"
+				alt=""
+			/>
+			<div class="card-body showCard">
+				<h1 href="/events/<%= event._id %> " class="mb-3 eventTitle">
+					<%= event.title %>
+				</h1>
+				<script></script>
+				<h5 class="card-text eventDate"><%= eventDate %></h5>
+				<p class="card-text text-muted Type">
+					Event Type: <%= event.type %>
+				</p>
+				<a class="viewEvent" href="/events/<%=event._id%>">View</a>
+				<a
+					href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+					target="_blank"
+				>
+					<i
+						class="fa fa-facebook fbIcon d-flex justify-content-end"
+						aria-hidden="true"
+					></i>
+					<a
+					href="https://www.facebook.com/sharer/sharer.php?u=example.org"
+					target="_blank"
+				>
+					<i
+						class="fa fa-twitter twitterIcon d-flex justify-content-end"
+						aria-hidden="true"
+					></i>
+				</a>
+			</div>
+		</div>
+	<%}%>
 		<%}%>
 	</section>
 	<section class="col mr-5">

@@ -15,7 +15,7 @@ const upload = multer({ storage });
 router.get(
 	"/",
 	catchAsync(async (req, res) => {
-		const events = await Event.find({});
+		const events = await Event.find({}).sort({ date: "asc" });
 		res.render("events/allEvents", { events });
 	})
 );

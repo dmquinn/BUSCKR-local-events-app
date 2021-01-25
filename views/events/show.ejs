@@ -19,7 +19,11 @@
 				alt=""
 				style="width: 20rem"
 			/>
-			<h5 class="eventDate"><%=event.date%></h5>
+			<h5 class="eventDate">
+				<%= new Date(event.date).getDate()%>/<%= new
+				Date(event.date).getMonth()%>/<%= new
+				Date(event.date).getFullYear()%>
+			</h5>
 			<h5 class="eventTitleSmall"><%=event.title%></h5>
 			<p class="card-text"><%=event.description%></p>
 		</div>
