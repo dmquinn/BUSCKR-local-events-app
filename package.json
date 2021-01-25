@@ -1,6 +1,9 @@
 {
 	"name": "busckr",
 	"version": "1.0.0",
+	"engines": {
+		"node": "13.14"
+	},
 	"description": "",
 	"main": "app.js",
 	"scripts": {
