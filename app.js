@@ -26,7 +26,7 @@ const LocalStrategy = require("passport-local");
 const mongoosePaginate = require("mongoose-paginate");
 const MongoDBStore = require("connect-mongo")(session);
 
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/BUSCKR";
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/nusckr";
 
 mongoose.connect(dbUrl, {
 	useNewUrlParser: true,
@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(parser.urlencoded({ extended: false }));
 
 const secret = process.env.SECRET || "thisworks";
-//
+
 const store = new MongoDBStore({
 	url: dbUrl,
 	secret,
@@ -133,7 +133,7 @@ app.use((err, req, res, next) => {
 	if (!err.message) err.message = "Turn Back!";
 	res.status(statusCode).render("error", { err });
 });
-
-app.listen(3000, () => {
-	console.log("serving on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log(`serving on port ${port}`);
 });
