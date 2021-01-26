@@ -92,6 +92,10 @@ main {
 .eventTitleSmall {
 	color: rgb(15, 141, 120);
 }
+.comingSoon {
+	color: rgb(14, 14, 14);
+	opacity: 40%;
+}
 .introText {
 	font-size: 20px;
 	width: 60%;
@@ -169,8 +173,12 @@ main {
 	background-size: cover;
 }
 .eventTitle,
-.eventDate {
+.eventDate,
+.eventTime {
 	font-family: "Anton", sans-serif;
+}
+.eventTime {
+	color: grey;
 }
 .eventDate {
 	color: rgb(252, 127, 127);
@@ -220,7 +228,8 @@ main {
 }
 
 /* D A T E P I C K E R  */
-input[type="date"] {
+input[type="date"],
+input[type="time"] {
 	display: block;
 	position: relative;
 	border: none;

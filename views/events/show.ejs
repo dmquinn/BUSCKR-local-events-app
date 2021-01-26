@@ -24,6 +24,7 @@
 				Date(event.date).getMonth()+1%>/<%= new
 				Date(event.date).getFullYear()%>
 			</h5>
+			<h6 class="eventTime"><%=event.time%></h6>
 			<h5 class="eventTitleSmall"><%=event.title%></h5>
 			<p class="card-text"><%=event.description%></p>
 		</div>
@@ -35,7 +36,9 @@
 		<% if(currentUser && event.author.equals(currentUser._id)) { %>
 
 		<div class="card-body offset-lg-1">
-			<a class="editButton" href="/events/<%=event._id%>/edit">EDIT</a>
+			<a class="editButton" href="/events/<%=event._id%>/edit"
+				><span class="mr-5 fa fa-pencil fa-2x"></span
+			></a>
 			<form
 				class="d-inline"
 				action="/events/<%=event._id%>?_method=DELETE"
@@ -122,7 +125,7 @@
 		.setLngLat(event.geometry.coordinates)
 		.addTo(map)
 		.setPopup(
-			new mapboxgl.Popup({ offset: 25 }).setHTML(
+			new mapboxgl.Popup({ offset: 35 }).setHTML(
 				`<h3>${event.title}</h3>`
 			)
 		)

@@ -39,6 +39,7 @@ router.post(
 		event.geometry = geoData.body.features[0].geometry;
 		event.images.url = req.file.path;
 		event.author = req.user._id;
+		console.log(event.time, event.date);
 		await event.save();
 		res.redirect(`/events/${event._id}`);
 	})

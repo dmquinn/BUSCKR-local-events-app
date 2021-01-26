@@ -1,4 +1,4 @@
-// const event = require("../models/event");
+const event = require("../models/event");
 
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({

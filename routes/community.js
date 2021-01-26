@@ -16,6 +16,7 @@ router.route("/community").get(
 	})
 );
 router.route("/:id").get(
+	isLoggedIn,
 	catchAsync(async (req, res) => {
 		const user = await User.findById(req.params.id);
 		const events = await Event.find({});

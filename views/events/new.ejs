@@ -19,9 +19,10 @@
 				<br>
 				<select name="event[type]" id="event-type">
 					<option value=""></option>
-					<option value="Rave">Rave</option>
 					<option value="Gig">Gig</option>
+					<option value="Rave">Rave</option>
 					<option value="Exhibition">Exhibition</option>
+					<option value="Other">Other</option>
 					
 				</select>
 			<div class="mb-3">
@@ -39,6 +40,12 @@
 				<label class="form-label" for="date">Date</label>
 				<br>
 				<input type="date" class="date" id="date" name="event[date]" required>
+			</div>
+			<div class="mb-3">
+				<div class="mb-3">
+				<label class="form-label" for="time">Time</label>
+				<br>
+				<input type="time" class="time" id="time" name="event[time]"  min="00:00" max="23:59">
 			</div>
 			<div class="mb-3">
 				<label class="form-label" for="location">Location</label>
