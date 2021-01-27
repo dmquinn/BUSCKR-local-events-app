@@ -2,8 +2,10 @@
 	background-color: rgb(15, 141, 120);
 }
 main {
-	background-color: rgb(250, 250, 250);
 	overflow: hidden;
+}
+body {
+	background-color: rgb(250, 250, 250);
 }
 
 /* N A V B A R */
@@ -39,6 +41,7 @@ main {
 	/* width: 100vw; */
 	display: flex;
 }
+
 .nav-link {
 	position: relative;
 	font-size: small;
@@ -67,6 +70,9 @@ main {
 	/* background-image: url("dng.jpg"); */
 	background-color: #202020 !important;
 	color: white;
+}
+.jumbotronBlack {
+	background-color: black !important;
 }
 
 .homeHeader h1 {

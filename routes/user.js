@@ -46,28 +46,19 @@ router.post(
 		res.redirect("/");
 	}
 );
-// router.post(
-// 	"/community",
 
-// 	(req, res) => {
-// 		const soundcloudLink = req.body.soundcloudLink;
-// 		console.log(soundcloudLink);
-// 		const redirectUrl = req.session.returnTo || `/community`;
-// 		delete req.session.returnTo;
-// 		res.redirect(`/community/${user._id}`);
-// 	}
-// );
 router.post(
 	"/addInfo/:id",
 	isLoggedIn,
 	// validateComment,
 	catchAsync(async (req, res) => {
-		console.log("req.params.id", req.params.id);
-		console.log("req.body.soundcloud", req.body.soundcloudLink);
 		const user = await User.findById(req.params.id);
+		const soundcloudLinks = [];
 		user.description = req.body.description;
 		user.soundcloudLink = req.body.soundcloudLink;
-		console.log("user", user);
+		await soundcloudLinks.push[user.soundcloudLink];
+		console.log(soundcloudLinks);
+
 		await user.save();
 		res.redirect(`/community/${user._id}`);
 	})
