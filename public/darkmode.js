@@ -8,9 +8,8 @@ if (mode === "light") {
 }
 
 function darkMode() {
-	// window.style.transition = "0s";
 	document.body.style.backgroundColor = "black";
-	document.getElementsByTagName("h1").style.color = "#b33131";
+	document.main.style.backgroundColor = "black";
 	const inFocus = document.querySelector(".inFocus");
 	if (inFocus) {
 		inFocus.style.color = "#b33131";
@@ -21,7 +20,7 @@ function darkMode() {
 	}
 	const inFocusDate = document.querySelector(".inFocusDate");
 	if (inFocusDate) {
-		inFocusDate.style.color = "#a34a4a";
+		inFocusDate.style.color = "#e9e9e9";
 	}
 	const upcomingEventsHeader = document.querySelector(
 		".upcomingEventsHeader"
@@ -29,22 +28,35 @@ function darkMode() {
 	if (upcomingEventsHeader) {
 		upcomingEventsHeader.style.color = "#b33131";
 	}
-
-	const viewEvent = document.querySelector(".viewEvent");
-	if (viewEvent) {
-		viewEvent.style.backgroundColor = "white";
-		viewEvent.style.color = "black";
+	const int = document.querySelectorAll(".int");
+	for (var i = 0; i < int.length; i++) {
+		if (int) {
+			int[i].style.color = "#b33131";
+		}
+	}
+	const showCard = document.querySelectorAll(".showCard");
+	for (var i = 0; i < showCard.length; i++) {
+		if (showCard) {
+			showCard[i].style.backgroundColor = "black";
+		}
+	}
+	const viewEvent = document.querySelectorAll(".viewEvent");
+	for (var i = 0; i < viewEvent.length; i++) {
+		if (viewEvent) {
+			viewEvent[i].style.backgroundColor = "black";
+			viewEvent[i].style.color = "white";
+		}
 	}
 	document.querySelector(".jumbotron").classList.add("jumbotronBlack");
 	document.querySelector(".navbar").style.backgroundColor = "black";
 	document.querySelector(".darkmodebtn").onclick = lightMode;
+	document.querySelector(".darkmodebtn").classList.add("darkmodeOn");
 	localStorage.setItem("mode", "dark");
 	mode = localStorage.getItem("mode");
 }
 
 function lightMode() {
 	document.body.style.backgroundColor = "white";
-	document.getElementsByTagName("h1").style.color = "#0f8d78";
 	const inFocus = document.querySelector(".inFocus");
 	if (inFocus) {
 		inFocus.style.color = "#0f8d78";
@@ -63,15 +75,29 @@ function lightMode() {
 	if (upcomingEventsHeader) {
 		upcomingEventsHeader.style.color = "white";
 	}
-
-	const viewEvent = document.querySelector(".viewEvent");
-	if (viewEvent) {
-		viewEvent.style.backgroundColor = "#0f8d78";
-		viewEvent.style.color = "white";
+	const int = document.querySelectorAll(".int");
+	for (var i = 0; i < int.length; i++) {
+		if (int) {
+			int[i].style.color = "white	";
+		}
+	}
+	const showCard = document.querySelectorAll(".showCard");
+	for (var i = 0; i < showCard.length; i++) {
+		if (showCard) {
+			showCard[i].style.backgroundColor = "white";
+		}
+	}
+	const viewEvent = document.querySelectorAll(".viewEvent");
+	for (var i = 0; i < viewEvent.length; i++) {
+		if (viewEvent) {
+			viewEvent[i].style.backgroundColor = " #0f8d78";
+			viewEvent[i].style.color = "white";
+		}
 	}
 	document.querySelector(".jumbotron").classList.remove("jumbotronBlack");
 	document.querySelector(".navbar").style.backgroundColor = " #202020";
 	document.querySelector(".darkmodebtn").onclick = darkMode;
+	document.querySelector(".darkmodebtn").classList.remove("darkmodeOn");
 	localStorage.setItem("mode", "light");
 	mode = localStorage.getItem("mode");
 }
