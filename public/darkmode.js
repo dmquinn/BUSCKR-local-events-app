@@ -9,7 +9,6 @@ if (mode === "light") {
 
 function darkMode() {
 	document.body.style.backgroundColor = "black";
-	document.main.style.backgroundColor = "black";
 	const inFocus = document.querySelector(".inFocus");
 	if (inFocus) {
 		inFocus.style.color = "#b33131";
@@ -57,6 +56,7 @@ function darkMode() {
 
 function lightMode() {
 	document.body.style.backgroundColor = "white";
+
 	const inFocus = document.querySelector(".inFocus");
 	if (inFocus) {
 		inFocus.style.color = "#0f8d78";
