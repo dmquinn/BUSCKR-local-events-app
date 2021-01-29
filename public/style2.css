@@ -3,6 +3,7 @@
 }
 * {
 	transition: 0.3s;
+	/* overflow: hidden; */
 }
 main {
 	overflow: hidden;
@@ -301,7 +302,7 @@ input[type="date"]:focus {
 	color: rgb(78, 78, 78);
 }
 .editIcon {
-	color: rgb(15, 141, 120);
+	color: #0f8d78;
 }
 .editIcon:hover {
 	color: rgb(12, 104, 88);
@@ -311,7 +312,7 @@ input[type="date"]:focus {
 	border: none;
 }
 .editButton {
-	color: grey;
+	color: rgb(233, 233, 233);
 }
 .editButton:hover {
 	color: rgb(88, 88, 88);
@@ -319,6 +320,8 @@ input[type="date"]:focus {
 	text-decoration-color: rgb(250, 250, 250) !important;
 }
 .darkmodebtn {
+	position: absolute;
+	right: 15px;
 	background-color: rgba(0, 0, 0, 0);
 	color: white;
 	border: none;
@@ -337,7 +340,7 @@ input[type="date"]:focus {
 @media only screen and (max-width: 767px) {
 	.rightLinks {
 		position: relative;
-		right: 0px;
+		right: 100px;
 		color: #a34a4a;
 	}
 }

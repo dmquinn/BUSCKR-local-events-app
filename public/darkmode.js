@@ -46,7 +46,30 @@ function darkMode() {
 			viewEvent[i].style.color = "white";
 		}
 	}
-	document.querySelector(".jumbotron").classList.add("jumbotronBlack");
+	const label = document.querySelectorAll("label");
+	for (var i = 0; i < label.length; i++) {
+		if (label) {
+			label[i].style.color = "white";
+		}
+	}
+	const eventDate = document.querySelectorAll(".eventDate");
+	for (var i = 0; i < label.length; i++) {
+		if (eventDate) {
+			eventDate[i].style.color = "white";
+		}
+	}
+	const loginRegister = document.querySelectorAll(".loginRegister");
+	for (var i = 0; i < loginRegister.length; i++) {
+		if (loginRegister) {
+			loginRegister[i].style.color = "white";
+		}
+	}
+	const jumbotron = document.querySelector(".jumbotron");
+	if (jumbotron) {
+		jumbotron.classList.add("jumbotronBlack");
+	}
+	document.querySelector(".footer").style.backgroundColor = "black";
+
 	document.querySelector(".navbar").style.backgroundColor = "black";
 	document.querySelector(".darkmodebtn").onclick = lightMode;
 	document.querySelector(".darkmodebtn").classList.add("darkmodeOn");
@@ -94,7 +117,30 @@ function lightMode() {
 			viewEvent[i].style.color = "white";
 		}
 	}
-	document.querySelector(".jumbotron").classList.remove("jumbotronBlack");
+	const label = document.querySelectorAll("label");
+	for (var i = 0; i < label.length; i++) {
+		if (label) {
+			label[i].style.color = "black";
+		}
+	}
+	const eventTitle = document.querySelectorAll(".eventTitle");
+	for (var i = 0; i < eventTitle.length; i++) {
+		if (eventTitle) {
+			eventTitle[i].style.color = "#0f8d78";
+		}
+	}
+	const loginRegister = document.querySelectorAll(".loginRegister");
+	for (var i = 0; i < loginRegister.length; i++) {
+		if (loginRegister) {
+			loginRegister[i].style.color = "#212529";
+		}
+	}
+	const jumbotron = document.querySelector(".jumbotron");
+	if (jumbotron) {
+		jumbotron.classList.remove("jumbotronBlack");
+	}
+	document.querySelector(".footer").style.backgroundColor = "white";
+
 	document.querySelector(".navbar").style.backgroundColor = " #202020";
 	document.querySelector(".darkmodebtn").onclick = darkMode;
 	document.querySelector(".darkmodebtn").classList.remove("darkmodeOn");
