@@ -79,9 +79,6 @@ body {
 	background-color: black !important;
 }
 
-.homeHeader h1 {
-	font-size: 60px !important;
-}
 .loginRegister {
 	font-size: 90px;
 }
@@ -94,6 +91,9 @@ body {
 .loginRegister {
 	font-family: "Anton", sans-serif;
 	opacity: 90%;
+}
+.homeHeader {
+	transform: skewX(-0deg);
 }
 .inFocusDate {
 	color: rgb(233, 92, 92);
@@ -330,6 +330,9 @@ input[type="date"]:focus {
 .darkmodeOn {
 	color: rgb(167, 0, 0);
 	transform: rotate(180deg);
+}
+.footer {
+	background-color: black;
 }
 @media screen and (max-width: 500px) {
 	.introText {

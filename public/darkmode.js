@@ -42,8 +42,8 @@ function darkMode() {
 	const viewEvent = document.querySelectorAll(".viewEvent");
 	for (var i = 0; i < viewEvent.length; i++) {
 		if (viewEvent) {
-			viewEvent[i].style.backgroundColor = "black";
-			viewEvent[i].style.color = "white";
+			viewEvent[i].style.backgroundColor = "white";
+			viewEvent[i].style.color = "black";
 		}
 	}
 	const label = document.querySelectorAll("label");
@@ -52,10 +52,16 @@ function darkMode() {
 			label[i].style.color = "white";
 		}
 	}
+	const eventTitle = document.querySelectorAll(".eventTitle");
+	for (var i = 0; i < eventTitle.length; i++) {
+		if (eventTitle) {
+			eventTitle[i].style.color = "white";
+		}
+	}
 	const eventDate = document.querySelectorAll(".eventDate");
 	for (var i = 0; i < label.length; i++) {
-		if (eventDate) {
-			eventDate[i].style.color = "white";
+		if (label) {
+			label[i].style.color = "white";
 		}
 	}
 	const loginRegister = document.querySelectorAll(".loginRegister");
@@ -139,7 +145,7 @@ function lightMode() {
 	if (jumbotron) {
 		jumbotron.classList.remove("jumbotronBlack");
 	}
-	document.querySelector(".footer").style.backgroundColor = "white";
+	document.querySelector(".footer").style.backgroundColor = "black";
 
 	document.querySelector(".navbar").style.backgroundColor = " #202020";
 	document.querySelector(".darkmodebtn").onclick = darkMode;
