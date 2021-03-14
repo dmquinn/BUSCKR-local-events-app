@@ -74,7 +74,7 @@ function darkMode() {
 	if (jumbotron) {
 		jumbotron.classList.add("jumbotronBlack");
 	}
-	document.querySelector(".footer").style.backgroundColor = "black";
+	document.querySelector(".footer-area").style.backgroundColor = "black";
 
 	document.querySelector(".navbar").style.backgroundColor = "black";
 	document.querySelector(".darkmodebtn").onclick = lightMode;
@@ -145,7 +145,7 @@ function lightMode() {
 	if (jumbotron) {
 		jumbotron.classList.remove("jumbotronBlack");
 	}
-	document.querySelector(".footer").style.backgroundColor = "black";
+	document.querySelector(".footer-area").style.backgroundColor = "black";
 
 	document.querySelector(".navbar").style.backgroundColor = " #202020";
 	document.querySelector(".darkmodebtn").onclick = darkMode;
@@ -153,5 +153,3 @@ function lightMode() {
 	localStorage.setItem("mode", "light");
 	mode = localStorage.getItem("mode");
 }
-
-// #a34a4a;

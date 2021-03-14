@@ -149,3 +149,12 @@
 	const events = {features: <%- JSON.stringify(events) %>};
 </script>
 <script src="/clusterMap.js"></script>
+<script>
+	mapboxgl.accessToken = mapToken;
+	const map = new mapboxgl.Map({
+		container: "map",
+		style: "mapbox://styles/mapbox/dark-v10",
+		center: [13.45417, 52.51583],
+		zoom: 12,
+	});
+</script>

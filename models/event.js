@@ -32,4 +32,9 @@ const EventSchema = new Schema({
 		},
 	],
 });
+EventSchema.virtual("properties.popUpMarkup").get(function () {
+	return `
+    <strong><a href="/events/${this._id}">${this.title}</a><strong>
+    <p>${this.description.substring(0, 20)}...</p>`;
+});
 module.exports = mongoose.model("Event", EventSchema);

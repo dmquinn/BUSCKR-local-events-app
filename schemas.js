@@ -7,7 +7,7 @@ module.exportsschema = joi.object({
 			title: joi.string().required(),
 			type: joi.string().required(),
 			price: joi.number().required().min(0),
-			// image: joi.string(),
+			image: joi.string(),
 			location: joi.string().required(),
 			description: joi.string().required(),
 		})
